@@ -15,12 +15,11 @@ connectDB();
 const app = express();
 
 // Middleware
-const corsOptions = {
-    origin: 'https://asset-manager-sigma.vercel.app', // Replace with your actual frontend URL
-    methods: 'GET,POST,DELETE',
-    allowedHeaders: 'Content-Type,Authorization',
-  };
-app.use(cors(corsOptions));
+app.use(cors({
+    origin: 'https://asset-manager-sigma.vercel.app', // Frontend domain (Vercel)
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Allowed methods
+    allowedHeaders: ['Content-Type', 'Authorization'],  // Allowed headers
+  }));
 
 app.use(bodyParser.json());
 // app.use(express.json());  // Instead of bodyParser.json()
