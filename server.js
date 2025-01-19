@@ -15,7 +15,12 @@ connectDB();
 const app = express();
 
 // Middleware
-app.use(cors());
+const corsOptions = {
+    origin: 'https://your-frontend.vercel.app', // Replace with your actual frontend URL
+    methods: 'GET,POST,DELETE',
+    allowedHeaders: 'Content-Type,Authorization',
+  };
+app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
 // app.use(express.json());  // Instead of bodyParser.json()
