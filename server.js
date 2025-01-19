@@ -16,7 +16,7 @@ const app = express();
 
 // Middleware
 const corsOptions = {
-    origin: 'https://asset-manager-sigma.vercel.app/', // Replace with your actual frontend URL
+    origin: 'https://asset-manager-sigma.vercel.app', // Replace with your actual frontend URL
     methods: 'GET,POST,DELETE',
     allowedHeaders: 'Content-Type,Authorization',
   };
